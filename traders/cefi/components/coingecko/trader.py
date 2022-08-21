@@ -8,7 +8,8 @@ class CoingeckoTrader(ITraderComponent):
     _endpoint = "https://api.coingecko.com/api/v3/simple/price?ids={}&vs_currencies={}"
 
     _markets: dict = {
-
+        'USDT': 'tether',
+        'WETH': 'weth'
     }
 
     @classmethod
