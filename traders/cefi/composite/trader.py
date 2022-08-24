@@ -19,9 +19,9 @@ class CeFiTrader(ITraderComponent):
         trader.setParent(self, parent=self)
 
     @yieldmethod
-    def getPrice(self, major: str, vs: str = 'USD') -> float:
+    def getPrice(self, major: str, vs: str = 'USD', *args, **kwargs) -> float:
         for trader in self._traders:
-            yield trader.getPrice(major=major, vs=vs)
+            yield trader.getPrice(major=major, vs=vs, *args, **kwargs)
 
 
 cefiTrader = CeFiTrader()

@@ -13,7 +13,7 @@ class CoingeckoTrader(ITraderComponent):
     }
 
     @classmethod
-    def getPrice(self, major: str, vs: str) -> Optional[float]:
+    def getPrice(self, major: str, vs: str, *args, **kwargs) -> Optional[float]:
         vs = 'usd' if vs == 'USD' else vs
         try:
             market = self._markets[major]
