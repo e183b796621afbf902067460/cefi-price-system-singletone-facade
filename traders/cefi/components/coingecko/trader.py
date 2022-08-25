@@ -9,7 +9,8 @@ class CoingeckoTrader(ITraderComponent):
 
     _markets: dict = {
         'USDT': 'tether',
-        'WETH': 'weth'
+        'WETH': 'weth',
+        'WBNB': 'wbnb'
     }
 
     @classmethod
