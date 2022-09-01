@@ -10,7 +10,13 @@ class CoingeckoTrader(ITraderComponent):
     _markets: dict = {
         'USDT': 'tether',
         'WETH': 'weth',
-        'WBNB': 'wbnb'
+        'WBNB': 'wbnb',
+        'WBTC': 'wrapped-bitcoin',
+        'amWETH': 'aave-polygon-weth',
+        'amWBTC': 'aave-polygon-wbtc',
+        'gDAI': 'geist-dai',
+        'gUSDC': 'geist-usdc',
+        'gfUSDT': 'geist-fusdt'
     }
 
     @classmethod

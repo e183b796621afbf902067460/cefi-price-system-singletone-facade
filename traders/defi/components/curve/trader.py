@@ -18,6 +18,11 @@ class CurveTrader(ITraderComponent):
             'address': '0xA5407eAE9Ba41422680e2e00537571bcC53efBfD',
             'provider': httpProviderFabric.getProduct(chain=Chains.ETH),
             'scale': 18
+        },
+        'am3CRV': {
+            'address': '0x445FE580eF8d70FF569aB36e80c647af338db351',
+            'provider': httpProviderFabric.getProduct(chain=Chains.MATIC),
+            'scale': 18
         }
     }
 
