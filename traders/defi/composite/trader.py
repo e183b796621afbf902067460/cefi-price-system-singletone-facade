@@ -5,6 +5,7 @@ from head.decorators.singleton import singleton
 from head.decorators.yieldmethod import yieldmethod
 
 from traders.defi.components.curve.trader import CurveTrader
+from traders.defi.components.ellipsis.trader import EllipsisTrader
 
 
 @singleton
@@ -25,3 +26,4 @@ class DeFiTrader(ITraderComponent):
 defiTrader = DeFiTrader()
 
 defiTrader.addTrader(trader=CurveTrader)
+defiTrader.addTrader(trader=EllipsisTrader)
