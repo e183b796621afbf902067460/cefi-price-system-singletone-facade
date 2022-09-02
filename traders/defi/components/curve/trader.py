@@ -1,7 +1,6 @@
 from typing import Optional
 
 from head.interfaces.trader.interface import ITraderComponent
-from head.consts.chains.const import Chains
 from defi.protocols.curve.contracts.Pool import CurvePoolContract
 from providers.fabrics.http.fabric import httpProviderFabric
 
@@ -11,17 +10,17 @@ class CurveTrader(ITraderComponent):
     _markets: dict = {
         '3Crv': {
             'address': '0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7',
-            'provider': httpProviderFabric.getProduct(chain=Chains.ETH),
+            'provider': httpProviderFabric.getProduct(chain='eth'),
             'scale': 18
         },
         'cvxcrvPlain3andSUSD': {
             'address': '0xA5407eAE9Ba41422680e2e00537571bcC53efBfD',
-            'provider': httpProviderFabric.getProduct(chain=Chains.ETH),
+            'provider': httpProviderFabric.getProduct(chain='eth'),
             'scale': 18
         },
         'am3CRV': {
             'address': '0x445FE580eF8d70FF569aB36e80c647af338db351',
-            'provider': httpProviderFabric.getProduct(chain=Chains.MATIC),
+            'provider': httpProviderFabric.getProduct(chain='matic'),
             'scale': 18
         }
     }
