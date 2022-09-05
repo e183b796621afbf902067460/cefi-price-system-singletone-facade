@@ -16,7 +16,13 @@ class CoingeckoTrader(ITraderComponent):
         'amWBTC': 'aave-polygon-wbtc',
         'gDAI': 'geist-dai',
         'gUSDC': 'geist-usdc',
-        'gfUSDT': 'geist-fusdt'
+        'gfUSDT': 'geist-fusdt',
+        'GUSD': 'gemini-dollar',
+        'TUSD': 'true-usd',
+        'FEI': 'fei-usd',
+        'USDP': 'paxos-standard',
+        'LUSD': 'liquity-usd',
+        'MIM': 'magic-internet-money'
     }
 
     @classmethod
