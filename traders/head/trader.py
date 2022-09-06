@@ -27,10 +27,15 @@ class HeadTrader(ITraderComponent):
         '0x049d68029688eAbF473097a2fC38ef61633A3C7A': {'symbol': 'fUSDT', 'chain': 'ftm'},
         '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75': {'symbol': 'USDC', 'chain': 'ftm'},
         '0x82f0B8B456c1A451378467398982d4834b6829c1': {'symbol': 'MIM', 'chain': 'ftm'},
-        '0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E': {'symbol': 'DAI', 'chain': 'ftm'}
+        '0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E': {'symbol': 'DAI', 'chain': 'ftm'},
+        '0xc7198437980c041c805A1EDcbA50c1Ce5db95118': {'symbol': 'USDT.e', 'chain': 'avax'},
+        '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664': {'symbol': 'USDC.e', 'chain': 'avax'}
     }
     _sames: dict = {
-        'fUSDT': 'USDT'
+        'fUSDT': 'USDT',
+        'DAI.e': 'DAI',
+        'USDT.e': 'USDT',
+        'USDC.e': 'USDC'
     }
 
     def addTrader(self, trader) -> None:
