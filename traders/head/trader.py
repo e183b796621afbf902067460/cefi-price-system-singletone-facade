@@ -29,7 +29,8 @@ class HeadTrader(ITraderComponent):
         '0x82f0B8B456c1A451378467398982d4834b6829c1': {'symbol': 'MIM', 'chain': 'ftm'},
         '0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E': {'symbol': 'DAI', 'chain': 'ftm'},
         '0xc7198437980c041c805A1EDcbA50c1Ce5db95118': {'symbol': 'USDT.e', 'chain': 'avax'},
-        '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664': {'symbol': 'USDC.e', 'chain': 'avax'}
+        '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664': {'symbol': 'USDC.e', 'chain': 'avax'},
+        '0xd586E7F844cEa2F87f50152665BCbc2C279D8d70': {'symbol': 'DAI.e', 'chain': 'avax'}
     }
     _sames: dict = {
         'fUSDT': 'USDT',

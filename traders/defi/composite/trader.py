@@ -6,6 +6,7 @@ from head.decorators.yieldmethod import yieldmethod
 
 from traders.defi.components.curve.trader import CurveTrader
 from traders.defi.components.ellipsis.trader import EllipsisTrader
+from traders.defi.components.convex.trader import ConvexTrader
 
 
 @singleton
@@ -27,3 +28,4 @@ defiTrader = DeFiTrader()
 
 defiTrader.addTrader(trader=CurveTrader)
 defiTrader.addTrader(trader=EllipsisTrader)
+defiTrader.addTrader(trader=ConvexTrader)
