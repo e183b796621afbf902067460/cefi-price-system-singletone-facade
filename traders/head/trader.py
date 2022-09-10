@@ -57,7 +57,7 @@ class HeadTrader(ITraderComponent):
             yield trader.getPrice(major=symbol, vs=vs, *args, **kwargs)
 
     def isStablecoin(self, address: str) -> bool:
-        return address in [stableAddress for addresses in self._stablecoins.values() for stableAddress in addresses]
+        return address in [stableAddress for addresses in self._stablecoins.values() for stableAddress in addresses.keys()]
 
     def _same(self, asset: str) -> str:
         return self._sames[asset] if asset in self._sames else asset
