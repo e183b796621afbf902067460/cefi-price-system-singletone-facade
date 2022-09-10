@@ -31,10 +31,10 @@ class CoingeckoTrader(ITraderComponent):
         vs = 'usd' if vs == 'USD' else vs
         try:
             market = self._markets[major]
-            r = requests.get(url=self._endpoint.format(market, vs)).json()[market][vs]
+            r = requests.get(url=self._endpoint.format(market, vs))
             while r.status_code == 429:
                 time.sleep(5)
-                r = requests.get(url=self._endpoint.format(market, vs)).json()[market][vs]
-            return r
+                r = requests.get(url=self._endpoint.format(market, vs))
+            return r.json()[market][vs]
         except KeyError:
             return None
