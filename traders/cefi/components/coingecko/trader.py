@@ -33,7 +33,7 @@ class CoingeckoTrader(ITraderComponent):
             market = self._markets[major]
             r = requests.get(url=self._endpoint.format(market, vs))
             while r.status_code == 429:
-                time.sleep(5)
+                time.sleep(10)
                 r = requests.get(url=self._endpoint.format(market, vs))
             return r.json()[market][vs]
         except KeyError:
