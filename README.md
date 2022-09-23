@@ -13,6 +13,8 @@ from traders.head.trader import headTrader
 majorCurrency = 'BTC'
 vsCurrency = 'USD'
 
-price = headTrader(major=majorCurrency, vs=vsCurrency)
+price = headTrader.getPrice(major=majorCurrency, vs=vsCurrency)
 ```
-The code above will return current BTC price in USD as underlying.
+`getPrice()` is a [@yieldmethod](https://github.com/e183b796621afbf902067460/defi-head-core/blob/master/head/decorators/yieldmethod.py) it's means that it will recursively call `getPrice()` method from sub-traders until the price is returned.
+
+The code above will return current BTC price in USD as underlying. 
