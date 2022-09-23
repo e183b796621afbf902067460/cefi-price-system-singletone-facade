@@ -4,6 +4,9 @@ Depends on: [defi-head-core](https://github.com/e183b796621afbf902067460/defi-he
 ---
 The Trader object helps to get the price of the needed asset. The [HeadTrader](https://github.com/e183b796621afbf902067460/hybrid-traders-composite/blob/master/traders/head/trader.py) knows everything about every trader such as: [*CeFiTrader*](https://github.com/e183b796621afbf902067460/hybrid-traders-composite/blob/master/traders/cefi/composite/trader.py) and [*DeFiTrader*](https://github.com/e183b796621afbf902067460/hybrid-traders-composite/blob/master/traders/defi/composite/trader.py), but also each of these traders knows the sub-traders. Sub-trader returns the price value based on it market. For example, Binance can return the price of only listened assets. So, if Binance doesn't know a specific asset price an another trader may.
 
+# Configuration
+To provide needed configuration just need to set environment variables for needed blockchain [node](https://github.com/e183b796621afbf902067460/defi-providers-fabric/tree/master/providers/fabrics).
+
 # Usage
 Simple example:
 ```
