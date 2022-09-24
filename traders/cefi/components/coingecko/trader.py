@@ -3,8 +3,10 @@ from typing import Optional
 import time
 
 from head.interfaces.trader.interface import ITraderComponent
+from head.decorators.singleton import singleton
 
 
+@singleton
 class CoingeckoTrader(ITraderComponent):
     _endpoint = "https://api.coingecko.com/api/v3/simple/price?ids={}&vs_currencies={}"
 

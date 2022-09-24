@@ -1,10 +1,12 @@
 from typing import Optional
 
 from head.interfaces.trader.interface import ITraderComponent
+from head.decorators.singleton import singleton
 from defi.protocols.curve.contracts.Pool import CurvePoolContract
 from providers.fabrics.http.fabric import httpProviderFabric
 
 
+@singleton
 class ConvexTrader(ITraderComponent):
 
     _markets: dict = {
