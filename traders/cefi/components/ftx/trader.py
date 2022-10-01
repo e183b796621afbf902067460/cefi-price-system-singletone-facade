@@ -2,10 +2,8 @@ import requests
 from typing import Optional
 
 from head.interfaces.trader.interface import ITraderComponent
-from head.decorators.singleton import singleton
 
 
-@singleton
 class FTXTrader(ITraderComponent):
 
     _endpoint = "https://ftx.com/api/markets/"

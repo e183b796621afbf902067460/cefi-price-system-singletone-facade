@@ -1,12 +1,10 @@
 from typing import Optional
 
 from head.interfaces.trader.interface import ITraderComponent
-from head.decorators.singleton import singleton
 from defi.protocols.ellipsis.contracts.Pool import EllipsisPoolContract
 from providers.fabrics.http.fabric import httpProviderFabric
 
 
-@singleton
 class EllipsisTrader(ITraderComponent):
 
     _markets: dict = {
