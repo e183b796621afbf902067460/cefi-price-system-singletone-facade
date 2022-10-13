@@ -1,4 +1,4 @@
-# Hybrid Traders Composite
+# DeFi Traders Composite
 Depends on: [defi-head-core](https://github.com/e183b796621afbf902067460/defi-head-core), [defi-contracts-evm](https://github.com/e183b796621afbf902067460/defi-contracts-evm) and [defi-providers-fabric](https://github.com/e183b796621afbf902067460/defi-providers-fabric).
 
 ---
