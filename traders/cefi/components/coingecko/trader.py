@@ -23,7 +23,8 @@ class CoingeckoTrader(ITraderComponent):
         'FEI': 'fei-usd',
         'USDP': 'paxos-standard',
         'LUSD': 'liquity-usd',
-        'MIM': 'magic-internet-money'
+        'MIM': 'magic-internet-money',
+        'EPX': 'ellipsis-x'
     }
 
     @classmethod
