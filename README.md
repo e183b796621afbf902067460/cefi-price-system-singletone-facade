@@ -9,7 +9,7 @@ To provide needed configuration just need to set environment variables for neede
 
 # Usage
 Simple example:
-```
+```python
 from traders.head.trader import headTrader
 
 
