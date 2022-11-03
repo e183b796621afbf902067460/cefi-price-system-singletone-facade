@@ -12,6 +12,11 @@ class EllipsisTrader(ITraderComponent):
             'address': '0x160CAed03795365F3A589f10C379FfA7d75d4E76',
             'provider': httpProviderFabric.getProduct(chain='bsc'),
             'scale': 18
+        },
+        '2epx': {
+            'address': '0x408A61e158D7BC0CD339BC76917b8Ea04739d473',
+            'provider': httpProviderFabric.getProduct(chain='bsc'),
+            'scale': 18
         }
     }
 
