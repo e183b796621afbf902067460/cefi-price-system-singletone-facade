@@ -43,7 +43,11 @@ class HeadTrader(ITraderComponent):
         'fUSDT': 'USDT',
         'DAI.e': 'DAI',
         'USDT.e': 'USDT',
-        'USDC.e': 'USDC'
+        'USDC.e': 'USDC',
+        'WETH.e': 'WETH',
+        'WBTC.e': 'WBTC',
+        'CRV.e': 'CRV'
+
     }
 
     def addTrader(self, trader) -> None:

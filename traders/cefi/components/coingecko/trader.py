@@ -24,7 +24,17 @@ class CoingeckoTrader(ITraderComponent):
         'USDP': 'paxos-standard',
         'LUSD': 'liquity-usd',
         'MIM': 'magic-internet-money',
-        'EPX': 'ellipsis-x'
+        'EPX': 'ellipsis-x',
+        'sUSD': 'nusd',
+        'UST': 'terrausd-wormhole',
+        'AMPL': 'ampleforth',
+        'DPI': 'defipulse-index',
+        'renFIL': 'renfil',
+        'stETH': 'staked-ether',
+        'xSUSHI': 'xsushi',
+        'WFTM': 'wrapped-fantom',
+        'WAVAX': 'wrapped-avax',
+        'JOE': 'joe'
     }
 
     @classmethod
