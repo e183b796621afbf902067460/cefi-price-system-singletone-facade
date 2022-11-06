@@ -35,7 +35,8 @@ class CoingeckoTrader(ITraderComponent):
         'WFTM': 'wrapped-fantom',
         'WAVAX': 'wrapped-avax',
         'JOE': 'joe',
-        'GEIST': 'geist-finance'
+        'GEIST': 'geist-finance',
+        'WXT': 'wirex'
     }
 
     @classmethod
