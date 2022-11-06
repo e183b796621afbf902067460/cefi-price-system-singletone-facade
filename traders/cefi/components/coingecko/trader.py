@@ -34,7 +34,8 @@ class CoingeckoTrader(ITraderComponent):
         'xSUSHI': 'xsushi',
         'WFTM': 'wrapped-fantom',
         'WAVAX': 'wrapped-avax',
-        'JOE': 'joe'
+        'JOE': 'joe',
+        'GEIST': 'geist-finance'
     }
 
     @classmethod

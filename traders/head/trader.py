@@ -46,7 +46,8 @@ class HeadTrader(ITraderComponent):
         'USDC.e': 'USDC',
         'WETH.e': 'WETH',
         'WBTC.e': 'WBTC',
-        'CRV.e': 'CRV'
+        'CRV.e': 'CRV',
+        'stkAAVE': 'AAVE'
 
     }
 
