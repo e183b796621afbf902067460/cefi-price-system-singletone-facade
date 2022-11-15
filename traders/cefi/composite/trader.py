@@ -7,7 +7,6 @@ from head.decorators.yieldmethod import yieldmethod
 from traders.cefi.components.binance.trader import BinanceTrader
 from traders.cefi.components.gateio.trader import GateioTrader
 from traders.cefi.components.coingecko.trader import CoingeckoTrader
-from traders.cefi.components.ftx.trader import FTXTrader
 
 
 @singleton
@@ -27,7 +26,6 @@ class CeFiTrader(ITraderComponent):
 
 cefiTrader = CeFiTrader()
 
-cefiTrader.addTrader(trader=FTXTrader)
 cefiTrader.addTrader(trader=BinanceTrader)
 cefiTrader.addTrader(trader=GateioTrader)
 cefiTrader.addTrader(trader=CoingeckoTrader)
