@@ -1,4 +1,5 @@
 from typing import List, Dict, Optional
+from functools import lru_cache
 
 from trad3er.typings.trader.typing import Trad3r
 from trad3er.interfaces.trader.interface import iTrad3r
@@ -17,6 +18,7 @@ class RootTrad3r(iTrad3r):
         if not self._traders.get(name):
             self._traders[name] = trader
 
+    @lru_cache
     @yieldmethod
     def get_price(
             self,
