@@ -2,11 +2,11 @@ import requests
 from typing import Optional
 import time
 
-from head.interfaces.trader.interface import ITraderComponent
+from trad3er.interfaces.trader.interface import iTrad3r
 
 
-class CoingeckoTrader(ITraderComponent):
-    _endpoint = "https://api.coingecko.com/api/v3/simple/price?ids={}&vs_currencies={}"
+class CoinGeckoTrad3r(iTrad3r):
+    _endpoint = "https://api.coingecko.com/api/v3/simple/price?ids={first}&vs_currencies={second}"
 
     _markets: dict = {
         'USDT': 'tether',
@@ -40,14 +40,14 @@ class CoingeckoTrader(ITraderComponent):
     }
 
     @classmethod
-    def getPrice(self, major: str, vs: str, *args, **kwargs) -> Optional[float]:
-        vs = 'usd' if vs == 'USD' else vs
+    def get_price(cls, first: str, second: str, *args, **kwargs) -> Optional[float]:
+        second = 'usd' if second == 'USD' else second
         try:
-            market = self._markets[major]
-            r = requests.get(url=self._endpoint.format(market, vs))
+            first = cls._markets[first]
+            r = requests.get(url=cls._endpoint.format(first=first, second=second))
             while r.status_code == 429:
                 time.sleep(10)
-                r = requests.get(url=self._endpoint.format(market, vs))
-            return r.json()[market][vs]
+                r = requests.get(url=cls._endpoint.format(first=first, second=second))
+            return r.json()[first][second]
         except KeyError:
             return None
