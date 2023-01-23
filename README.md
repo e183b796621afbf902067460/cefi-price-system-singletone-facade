@@ -9,9 +9,9 @@ To provide needed configuration just need to set environment variables for neede
 
 # Usage
 Simple example:
-```python
-from traders.head.trader import headTrader
 
+```python
+from trad3er.head.trader import headTrader
 
 majorCurrency = 'BTC'
 vsCurrency = 'USD'

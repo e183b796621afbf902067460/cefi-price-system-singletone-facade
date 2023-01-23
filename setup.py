@@ -8,11 +8,11 @@ with open('requirements.txt') as requirements:
     required = requirements.read().splitlines()
 
 setup(
-    name="defi-traders-composite",
-    version="1.0",
+    name="trad3er",
+    version="0.0.1",
     author="e183b796621afbf902067460",
     author_email="606d18446a06fe9738fd@gmail.com",
-    url="https://github.com/e183b796621afbf902067460/defi-traders-composite",
+    url="https://github.com/e183b796621afbf902067460/trad3er",
     packages=find_packages(),
     long_description=long_description,
     install_requires=required,
