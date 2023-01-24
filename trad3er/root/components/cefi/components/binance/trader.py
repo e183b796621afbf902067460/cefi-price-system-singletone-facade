@@ -34,3 +34,7 @@ class BinanceTrad3r(iTrad3r):
             return float(requests.get(url=cls._endpoint + first.upper() + second.upper()).json()['price'])
         except KeyError:
             return None
+
+
+class BinanceUSDTmTrad3r(BinanceTrad3r):
+    _endpoint = 'https://api.binance.com/fapi/v1/ticker/price?symbol='

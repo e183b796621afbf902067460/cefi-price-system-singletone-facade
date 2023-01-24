@@ -5,7 +5,7 @@ from trad3er.interfaces.trader.interface import iTrad3r
 from trad3er.decorators.singleton import singleton
 from trad3er.decorators.yieldmethod import yieldmethod
 
-from trad3er.root.components.cefi.components.binance.trader import BinanceTrad3r
+from trad3er.root.components.cefi.components.binance.trader import BinanceTrad3r, BinanceUSDTmTrad3r
 from trad3er.root.components.cefi.components.gateio.trader import GateIOTrad3r
 from trad3er.root.components.cefi.components.coingecko.trader import CoinGeckoTrad3r
 
@@ -33,3 +33,4 @@ ceFiTrad3r = CeFiTrad3r()
 ceFiTrad3r.add_trader(name='binance', trader=BinanceTrad3r)
 ceFiTrad3r.add_trader(name='gateio', trader=GateIOTrad3r)
 ceFiTrad3r.add_trader(name='coingecko', trader=CoinGeckoTrad3r)
+ceFiTrad3r.add_trader(name='binance_usdt_m', trader=BinanceUSDTmTrad3r)
