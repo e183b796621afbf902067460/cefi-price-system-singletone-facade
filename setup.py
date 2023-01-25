@@ -8,11 +8,11 @@ with open('requirements.txt') as requirements:
     required = requirements.read().splitlines()
 
 setup(
-    name="trad3er",
+    name="trad3r",
     version="0.0.1",
     author="e183b796621afbf902067460",
     author_email="606d18446a06fe9738fd@gmail.com",
-    url="https://github.com/e183b796621afbf902067460/trad3er",
+    url="https://github.com/e183b796621afbf902067460/trad3r",
     packages=find_packages(),
     long_description=long_description,
     install_requires=required,
