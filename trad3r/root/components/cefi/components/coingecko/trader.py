@@ -2,7 +2,7 @@ import requests
 from typing import Optional
 import time
 
-from trad3er.interfaces.trader.interface import iTrad3r
+from trad3r.interfaces.trader.interface import iTrad3r
 
 
 class CoinGeckoTrad3r(iTrad3r):

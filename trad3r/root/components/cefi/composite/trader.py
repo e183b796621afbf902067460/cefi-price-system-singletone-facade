@@ -1,13 +1,13 @@
 from typing import Dict, Generic, Optional
 
-from trad3er.typings.trader.typing import Trad3r
-from trad3er.interfaces.trader.interface import iTrad3r
-from trad3er.decorators.singleton import singleton
-from trad3er.decorators.yieldmethod import yieldmethod
+from trad3r.typings.trader.typing import Trad3r
+from trad3r.interfaces.trader.interface import iTrad3r
+from trad3r.decorators.singleton import singleton
+from trad3r.decorators.yieldmethod import yieldmethod
 
-from trad3er.root.components.cefi.components.binance.trader import BinanceTrad3r, BinanceUSDTmTrad3r
-from trad3er.root.components.cefi.components.gateio.trader import GateIOTrad3r
-from trad3er.root.components.cefi.components.coingecko.trader import CoinGeckoTrad3r
+from trad3r.root.components.cefi.components.binance.trader import BinanceTrad3r, BinanceUSDTmTrad3r
+from trad3r.root.components.cefi.components.gateio.trader import GateIOTrad3r
+from trad3r.root.components.cefi.components.coingecko.trader import CoinGeckoTrad3r
 
 
 @singleton

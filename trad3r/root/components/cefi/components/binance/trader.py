@@ -1,7 +1,7 @@
 import requests
 from typing import Optional
 
-from trad3er.interfaces.trader.interface import iTrad3r
+from trad3r.interfaces.trader.interface import iTrad3r
 
 
 class BinanceTrad3r(iTrad3r):
@@ -37,4 +37,4 @@ class BinanceTrad3r(iTrad3r):
 
 
 class BinanceUSDTmTrad3r(BinanceTrad3r):
-    _endpoint = 'https://api.binance.com/fapi/v1/ticker/price?symbol='
+    _endpoint = 'https://fapi.binance.com/fapi/v1/ticker/price?symbol='

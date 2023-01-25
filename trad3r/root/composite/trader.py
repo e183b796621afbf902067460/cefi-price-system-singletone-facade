@@ -1,12 +1,12 @@
 from typing import List, Dict, Optional
 from functools import lru_cache
 
-from trad3er.typings.trader.typing import Trad3r
-from trad3er.interfaces.trader.interface import iTrad3r
-from trad3er.decorators.yieldmethod import yieldmethod
-from trad3er.decorators.singleton import singleton
+from trad3r.typings.trader.typing import Trad3r
+from trad3r.interfaces.trader.interface import iTrad3r
+from trad3r.decorators.yieldmethod import yieldmethod
+from trad3r.decorators.singleton import singleton
 
-from trad3er.root.components.cefi.composite.trader import ceFiTrad3r
+from trad3r.root.components.cefi.composite.trader import ceFiTrad3r
 
 
 @singleton

@@ -11,9 +11,9 @@ pip install git+https://github.com/e183b796621afbf902067460/trad3r.git#egg=trad3
 
 # Usage
 Just base example.
-```python
-from trad3er.root.composite.trader import rootTrad3r
 
+```python
+from trad3r.root.composite.trader import rootTrad3r
 
 price = rootTrad3r.get_price(first='BTC')
 ```
@@ -22,9 +22,9 @@ price = rootTrad3r.get_price(first='BTC')
 The code above will return current BTC price in USD as underlying. 
 
 Another usage.
-```python
-from trad3er.root.composite.trader import rootTrad3r
 
+```python
+from trad3r.root.composite.trader import rootTrad3r
 
 price = rootTrad3r.get_price(first='BTC', source='binance')
 ```
