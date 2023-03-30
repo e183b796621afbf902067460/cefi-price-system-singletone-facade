@@ -8,6 +8,7 @@ class BinanceTrad3r(iTrad3r):
 
     _endpoint = "https://api.binance.com/api/v3/ticker/price?symbol="
     _sames: dict = {
+        'USDT': 'BUSD',
         'fUSDT': 'USDT',
         'DAI.e': 'DAI',
         'USDT.e': 'USDT',
