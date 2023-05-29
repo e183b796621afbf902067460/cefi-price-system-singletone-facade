@@ -37,7 +37,7 @@ services:
         env_file:
             - mlflow/.env
         volumes:
-            - mysql:/var/lib/mysql
+            - ./mysql:/var/lib/mysql
         networks:
             - mlflow
 
@@ -51,7 +51,7 @@ services:
             - minio
         ports:
             - "5000:5000"
-        command: 'mlflow server --backend-store-uri mysql+pymysql://mysql:mysql@mysql:3306/mysql --default-artifact-root s3://mlflow/ --host minio'
+        command: 'mlflow server --backend-store-uri mysql+pymysql://mysql:mysql@mysql:3306/mysql --default-artifact-root s3://mlflow-compute-logs/ --host minio'
         environment:
             MLFLOW_S3_ENDPOINT_URL: http://minio:9000
             AWS_ACCESS_KEY_ID:
