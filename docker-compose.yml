@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+
+    minio:
+        image: minio/minio:latest
+        restart: always
+        ports:
+          - '9000:9000'
+          - '9090:9090'
+        command: 'server /data --console-address ":9090"'
+        environment:
+          MINIO_ROOT_USER: minio-minio
+          MINIO_ROOT_PASSWORD: minio-minio
+        env_file:
+            - mlflow/.env
+        volumes:
+            - ./minio:/data
+        networks:
+            - mlflow
+
+    mysql:
+        image: mysql/mysql-server:latest
+        restart: always
+        healthcheck:
+            test: [ "CMD", "mysqladmin" ,"ping", "-h", "0.0.0.0" ]
+            timeout: 10s
+            retries: 5
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_HOST: 0.0.0.0
+            MYSQL_DATABASE: mysql
+            MYSQL_USER: mysql
+            MYSQL_PASSWORD: mysql
+            MYSQL_ROOT_PASSWORD: mysql
+        env_file:
+            - mlflow/.env
+        volumes:
+            - mysql:/var/lib/mysql
+        networks:
+            - mlflow
+
+    mlflow:
+        build:
+          context: ./mlflow
+          dockerfile: Dockerfile
+        restart: always
+        depends_on:
+            - mysql
+            - minio
+        ports:
+            - "5000:5000"
+        command: 'mlflow server --backend-store-uri mysql+pymysql://mysql:mysql@mysql:3306/mysql --default-artifact-root s3://mlflow/ --host minio'
+        environment:
+            MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+            AWS_ACCESS_KEY_ID:
+            AWS_SECRET_ACCESS_KEY:
+        volumes:
+            - ./mlflow/:/home/mlflow
+
+networks:
+  mlflow:
+
