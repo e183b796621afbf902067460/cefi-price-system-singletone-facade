@@ -5,4 +5,4 @@ WORKDIR /home/project/app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY logistic_regression.py ./logistic_regression.py
+COPY elastic_net ./elastic_net
