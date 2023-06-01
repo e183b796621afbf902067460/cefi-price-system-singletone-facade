@@ -44,8 +44,8 @@ S3.download_file(
     'diabetes_prediction_dataset.csv'
 )
 
-is_custom_alpha = len(sys.argv) > 1
-is_custom_l1_ratio = len(sys.argv) > 2
+is_custom_alpha = len(sys.argv) > 1 and float(sys.argv[1]) != 0
+is_custom_l1_ratio = len(sys.argv) > 2 and float(sys.argv[2]) != 0
 
 alpha = float(sys.argv[1]) if is_custom_alpha else 0.5
 l1_ratio = float(sys.argv[2]) if is_custom_l1_ratio else 0.5
@@ -68,12 +68,12 @@ Y, X = df['diabetes'], df.drop('diabetes', axis=1)
 x_train, x_test, y_train, y_test = tts(X, Y, test_size=.3, random_state=42)
 
 
-if not is_custom_alpha or not is_custom_l1_ratio:
+if not is_custom_alpha and not is_custom_l1_ratio:
 
     best_params = fmin(
         fn=objective_function,
         space=search_space,
-        max_evals=1000,
+        max_evals=100,
         trials=T
     )
 
@@ -92,11 +92,14 @@ r_mse = np.sqrt(mean_squared_error(y_true=y_test, y_pred=y_predictions_test))
 r2 = r2_score(y_true=y_test, y_pred=y_predictions_test)
 
 
-with mf.start_run(experiment_id='elastic_net'):
+with mf.start_run():
     mf.log_param("model", f"{M.__class__.__name__}")
 
-    mf.log_param("alpha", alpha)
-    mf.log_param("l1_ratio", l1_ratio)
+    _alpha_key = 'alpha' if is_custom_alpha else 'alpha_opt'
+    _l1_ratio_key = 'l1_ratio' if is_custom_l1_ratio else 'l1_ratio_opt'
+
+    mf.log_param(_alpha_key, alpha if is_custom_alpha else best_params['alpha'])
+    mf.log_param(_l1_ratio_key, l1_ratio if is_custom_l1_ratio else best_params['l1_ratio'])
 
     mf.log_metric("r_mse", r_mse)
     mf.log_metric("mae", mae)
