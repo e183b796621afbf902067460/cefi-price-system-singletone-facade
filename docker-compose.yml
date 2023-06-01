@@ -46,6 +46,7 @@ services:
           context: ./mlruns
           dockerfile: Dockerfile
         restart: always
+        hostname: mlflow
         depends_on:
             - mysql
             - minio
@@ -54,6 +55,7 @@ services:
         command: bash -c "mlflow server --backend-store-uri mysql+pymysql://mysql:mysql@mysql:3306/mysql --default-artifact-root s3://mlflow-compute-logs/ --host 0.0.0.0 --port 5000"
         environment:
             MLFLOW_S3_ENDPOINT_URL: http://minio:9000
+            MLFLOW_TRACKING_URI: http://mlflow:5000
             AWS_ACCESS_KEY_ID:
             AWS_SECRET_ACCESS_KEY:
         volumes:
